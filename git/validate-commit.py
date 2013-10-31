@@ -18,7 +18,7 @@ def check_format_rules(lineno, line):
         if len(line) > 50:
             return "Error %d: First line should be less than 50 characters " \
                     "in length." % (real_lineno,)
-        if !re.match('\[#[0-9]{8,10}\]', line):
+        if not re.match('\[#[0-9]{8,10}\]', line):
             return "Error %d: First line should start with pivotal tracker " \
                     "tag in format [#12345678]." % (real_lineno,)
     if lineno == 1:
