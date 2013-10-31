@@ -3,12 +3,7 @@
 import sys, os, re
 from subprocess import call
 
-print os.environ.get('EDITOR')
-
-if os.environ.get('EDITOR') != 'none':
-  editor = os.environ['EDITOR']
-else:
-  editor = "vim"
+editor = os.getenv('EDITOR', 'vim')
 
 message_file = sys.argv[1]
 
