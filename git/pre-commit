@@ -1,0 +1,15 @@
+#!/bin/sh
+# Check to see if we are on master branch. Stop accidental commits
+if [ "`git name-rev --name-only HEAD`" == "master" ]
+then
+   if [ -f yes_i_want_master ]
+   then
+      rm yes_i_want_master
+      exit 0
+   else
+      echo "Cannot commit to master"
+      echo "Remember to create file 'touch yes_i_want_master' to commit to master"
+   fi
+   exit 1
+fi
+exit 0
