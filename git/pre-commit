@@ -1,6 +1,6 @@
 #!/bin/sh
 # Check to see if we are on master branch. Stop accidental commits
-if [ "`git name-rev --name-only HEAD`" == "master" ]
+if [ "`git branch | grep \* | cut -f2 -d' '`" == "master" ]
 then
    if [ -f yes_i_want_master ]
    then
