@@ -39,4 +39,7 @@ lis.each do |li|
   results << temp                                                               
 end                                                                             
                                                                                 
-puts results
+results.sort! do |a, b|                                                         
+  [a[:city_state_zip], a['name']] <=> [b[:city_state_zip], b['name']]           
+end                                                                             
+pp results
